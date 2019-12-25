@@ -61,7 +61,7 @@ const App: React.FC = () => {
                 <p>Test 2</p>
               </TabPanel>
               <TabPanel value={currentTab} index={2}>
-                <p>Eric is gay btw</p>
+                <p>Test 3</p>
               </TabPanel>
             </Box>
 
