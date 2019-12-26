@@ -8,7 +8,6 @@ import EssayForm from './components/EssayForm'
 import TabPanel from './components/TabPanel'
 import PokemonDisplay from './components/PokemonDisplay'
 
-import Button from '@material-ui/core/Button'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Box from '@material-ui/core/Box'
@@ -16,29 +15,21 @@ import SearchBar, { GetSearchBarText } from './components/SearchBar';
 
 
 const App: React.FC = () => {
-    const [isPrimary, setIsPrimary] = useState(false);
     const [currentTab, setCurrentTab] = useState(0);
     const [searchText, setSearchText] = useState("");
 
-    function handleStatusChange(status: boolean) {
-      setIsPrimary(status);
-    }
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
       setCurrentTab(newValue);
     };
 
-    const something=(event: any)=> {
+    const EnterKeyResponse=(event: any)=> {
       if (event.keyCode === 13) {
           setSearchText(GetSearchBarText());
       }
     }
       return (
-        <div className="App" 
-            onKeyDown={(e) => {
-              something(e);
-            }}>
+        <div className="App" onKeyDown={EnterKeyResponse}>
           <header className="App-header">
-
             <NavBar />
             <SearchBar />
             <Tabs className="Tabs"
@@ -69,10 +60,5 @@ const App: React.FC = () => {
         </div>
       );
 }
-/*
-            <EssayForm buttonColor={isPrimary ? "default" : "inherit" } value="Rule #1"/>
-            <EssayForm buttonColor={isPrimary ? "primary" : "secondary" } value="Rule #2"/>
-            <Button onClick={() => handleStatusChange(!isPrimary)}>Hello World</Button>
-*/
 
 export default App;

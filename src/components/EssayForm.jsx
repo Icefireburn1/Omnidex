@@ -13,7 +13,7 @@ class EssayForm extends React.Component {
       super(props);
       this.state = {
         initialValue: this.props.value,
-        value: '\nEric is gay',
+        value: 'Default',
         buttonColor: "primary"
       };
   
