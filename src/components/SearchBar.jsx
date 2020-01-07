@@ -128,27 +128,3 @@ class SearchBar extends React.Component {
   }
 }
 export default SearchBar
-
-/*
-export default function SearchBar(props){
-  const classes = useStyles();
-    return (
-      <CssSearchBar className="Search-bar"
-          id="combo-box-demo"
-          onInputChange={(e,v,s) => input = v}
-          options={pokemonList}
-          className={{root: classes}}
-          getOptionLabel={(option) => option.name}
-          renderInput={params => (
-              <TextField {...params}
-                  label="Search"
-                  size="small"
-                  variant="outlined"
-                  margin='dense'
-                  fullWidth
-              />
-          )}
-      />
-    )
-}
-*/
