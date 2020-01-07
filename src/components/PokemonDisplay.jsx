@@ -50,7 +50,7 @@ class Pokemon {
             this.species = tableStr.find('td')[2].textContent;
             this.height = tableStr.find('td')[3].textContent;
             this.weight = tableStr.find('td')[4].textContent;
-            this.description = tableStr.find('td')[44].textContent // 44
+            this.description = tableStr.find('td')[44].textContent // This is currently bugged for some pokemon
 
             // There is a chance a pokemon has 2 pages, so we have to check for that
             // If it does have 2 pages, we will get the pokemon's weight instead
@@ -99,6 +99,9 @@ class PokemonDisplay extends React.Component {
     // This runs when DOM is available
     componentDidMount() {
         if (this.props.pokeName !== "") {
+            // Check if pokemon is in JSON file here
+
+            // If not in JSON, pull from website then write to JSON
             this.state.pokemon.GetPokemonObject(this.props.pokeName).then(data => this.setState({pokemon: data}));
         }
     }

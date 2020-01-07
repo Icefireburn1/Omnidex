@@ -31,7 +31,6 @@ const App: React.FC = () => {
         <div className="App" onKeyDown={EnterKeyResponse}>
           <header className="App-header">
             <NavBar />
-            <SearchBar />
             <Tabs className="Tabs"
               value={currentTab}  
               indicatorColor="primary"
@@ -43,6 +42,8 @@ const App: React.FC = () => {
               <Tab label="ITEM TWO" />
               <Tab label="ITEM THREE"/>
             </Tabs>
+            
+            <SearchBar />
 
             <Box className="Page-body">
               <TabPanel value={currentTab} index={0}>
