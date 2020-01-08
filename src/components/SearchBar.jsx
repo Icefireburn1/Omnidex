@@ -2,13 +2,10 @@ import React from 'react';
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles, createStyles, fade, withStyles, Input } from '@material-ui/core'
-import { createMuiTheme } from '@material-ui/core/styles'
-import { red } from '@material-ui/core/colors';
-import { relative } from 'path';
 import $ from 'jquery'
 
 var input = "NULL";
-export function GetSearchBarText(){
+export function getSearchBarText(){
     return input;
 }
 
@@ -64,7 +61,7 @@ class SearchBar extends React.Component {
   }
 
   componentDidMount() {
-    this.GetNationalPokedexList();
+    this.getNationalPokedexList();
   }
 
   render() {
@@ -88,7 +85,7 @@ class SearchBar extends React.Component {
     )
   }
 
-  async GetWebsiteHTML(webUrl)
+  async getWebsiteHTML(webUrl)
   {
      var result = await $.ajax({ 
          url: webUrl,
@@ -103,7 +100,7 @@ class SearchBar extends React.Component {
       return result;
   }
 
-   ParseWebpage(pageSource)
+   parseWebpage(pageSource)
   {
     try {
         var divHtml = $('<div>', {html:pageSource});     
@@ -123,8 +120,8 @@ class SearchBar extends React.Component {
     }
   }
 
-  async GetNationalPokedexList(){
-    await this.GetWebsiteHTML('https://pokemondb.net/pokedex/national').then(data => this.ParseWebpage(data)).catch(err => console.log(err));
+  async getNationalPokedexList(){
+    await this.getWebsiteHTML('https://pokemondb.net/pokedex/national').then(data => this.parseWebpage(data)).catch(err => console.log(err));
   }
 }
 export default SearchBar

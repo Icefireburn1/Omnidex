@@ -6,14 +6,14 @@ class Clickable extends Component{
         hasBeenClicked: false
     }
 
-    SimulateButtonClick(text){
+    simulateButtonClick(text){
         console.log(text);
     }
 
     render() {
         return (
             <div>
-                <Button variant="contained" color="primary" onClick={() => this.SimulateButtonClick("Poggers")}>Taco Button</Button>
+                <Button variant="contained" color="primary" onClick={() => this.simulateButtonClick("Poggers")}>Taco Button</Button>
             </div>
         );
     }

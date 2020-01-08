@@ -1,6 +1,6 @@
 {
-  "name": "cra-craco-electron-example",
-  "version": "0.1.1",
+  "name": "Omnidex",
+  "version": "0.1.0",
   "main": "public/electron.js",
   "homepage": "./",
   "private": true,
@@ -51,11 +51,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:wwlib/cra-craco-electron-example.git"
+    "url": "git+ssh://git@github.com:Icefireburn1/Omnidex.git"
   },
   "keywords": [
-    "react,create-react-app,cra,craco,electron,electron-builder"
+    "react,omnidex"
   ],
-  "author": "Andrew Rapo <andrew@wwlib.org> (http://wwlib.org/)",
+  "contributors": ["Justin Gewecke <icefireburn1@yahoo.com> (https://github.com/Icefireburn1)","Eric Hernandez"],
   "license": "MIT"
 }

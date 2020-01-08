@@ -1,17 +1,14 @@
 import React, { TextareaHTMLAttributes, useState } from 'react';
 import './App.css';
-import './scripts/pokemondbScraper'
 
 import NavBar from './components/NavBar'
-import Clickable from './components/Clickable'
-import EssayForm from './components/EssayForm'
 import TabPanel from './components/TabPanel'
 import PokemonDisplay from './components/PokemonDisplay'
 
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Box from '@material-ui/core/Box'
-import SearchBar, { GetSearchBarText } from './components/SearchBar';
+import SearchBar, { getSearchBarText } from './components/SearchBar';
 
 
 const App: React.FC = () => {
@@ -22,13 +19,13 @@ const App: React.FC = () => {
       setCurrentTab(newValue);
     };
 
-    const EnterKeyResponse=(event: any)=> {
+    const enterKeyResponse=(event: any)=> {
       if (event.keyCode === 13) {
-          setSearchText(GetSearchBarText());
+          setSearchText(getSearchBarText());
       }
     }
       return (
-        <div className="App" onKeyDown={EnterKeyResponse}>
+        <div className="App" onKeyDown={enterKeyResponse}>
           <header className="App-header">
             <NavBar />
             <Tabs className="Tabs"
